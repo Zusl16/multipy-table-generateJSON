@@ -1,22 +1,11 @@
-//import filesystem api from node
-const fs = require("fs");
-
+//import createFile function from helpers\multiply.js
+const { createFile } = require("./helpers/multiply");
+//Limpiar consola
 console.clear();
-
 //CONSTANT NUMBER
 const n = 4;
-
-//Multiply
-let result = "";
-for (let i = 1; i <= 10; i++) {
-  result += `${n} * ${i} = ${n * i}\n`;
-}
-
-//write file
-fs.writeFile(`table${n}.txt`, result, (err) => {
-  if (err) {
-    console.log(err);
-  }
-  console.log("File created successfully");
-});
+//CALL FUNCTION
+createFile(n)
+  .then((result) => console.log(result, "created successfully"))
+  .catch((err) => console.log(err, "error"));
 
