@@ -4,7 +4,8 @@
   "description": "Tabla de multiplicar con promesa que crea un archivo de texto",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "num": "node app --n=5"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Zusl16/multipy-table-generateJSON/issues"
   },
-  "homepage": "https://github.com/Zusl16/multipy-table-generateJSON#readme"
+  "homepage": "https://github.com/Zusl16/multipy-table-generateJSON#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
 }
