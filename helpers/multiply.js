@@ -1,18 +1,27 @@
 const fs = require("fs");
-const createFile = async (n = 5) => {
+const colors = require("colors");
+const createFile = async (n = 5, listar = false, hasta = 10) => {
   try {
-    console.log("        Tabla del: ", n);
-    console.log("==================================");
+    //condition if listar is true
+    if (listar) {
+      console.log("        Tabla del: ".green, n);
+      console.log("\n==================================\n".bgYellow);
+    }
 
     let result = "";
     //Multiply
-    for (let i = 1; i <= 10; i++) {
+
+    for (let i = 1; i <= hasta; i++) {
       result += `${n} * ${i} = ${n * i}\n`;
     }
     //Show result in console
-    console.log(result);
+    //condition if argv is true or false
+    if (listar) {
+      console.log(result);
+    }
+
     //write file
-    fs.writeFileSync(`table${n}.txt`, result);
+    fs.writeFileSync(`./salida/table${n}.txt`, result);
 
     return `table${n}.txt`;
   } catch (error) {
